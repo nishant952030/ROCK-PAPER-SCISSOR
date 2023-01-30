@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-color: #3b3b7b */
 }
 
 .fa {
@@ -10,18 +11,26 @@
 
 .scored {
     color: orange;
+    font-size: 3rem;
     fill: red;
 }
 
+#msg_button:hover {
+    cursor: default;
+}
 
 /* styling the header */
 @import url("https://fonts.googleapis.com/css2?family=Asap&family=Roboto:ital,wght@0,500;0,900;1,500&display=swap");
 
 body {
-
+    /* margin: 10rem; */
+    overflow: visible;
     font-family: "Asap", sans-serif;
-    background-color: #464693;
-    height: 100vh;
+    background-color: #7f7fd0;
+    /* min-height: 100vh; */
+    min-width: 100vw;
+    max-height: 100vh;
+    /* height: 100vh; */
 }
 
 header {
@@ -35,6 +44,7 @@ header {
 
 header h1 {
     /* position: absolute; */
+    overflow: hidden;
     width: 90%;
     font-size: 60px;
     font-weight: 600;
@@ -56,16 +66,18 @@ header h1 {
 
 /* styling the hr tags */
 hr {
-    border-left: 3px double #000000;
-    border-top: 3px double #000000;
+    border-left: 10px double #000000;
+    border-top: 10px double #000000;
+    border-bottom: 10px double #000000;
 }
 
 .horizontal {
     overflow: visible;
     /* For IE */
-    height: 30px;
+    height: 1.875rem;
+    /* font-weight: 10000; */
     border-style: solid;
-    border-color: black;
+    border-color: rgb(235, 10, 10);
     border-width: 1px 0 0 0;
     border-radius: 20px;
 }
@@ -74,13 +86,14 @@ hr {
     /* Not really supposed to work, but does */
     display: block;
     content: "";
-    height: 30px;
-    margin-top: -31px;
+    height: 1.875rem;
+    /* margin-top: -1.9375rem; */
     border-style: solid;
     border-color: black;
-    border-width: 0 0 1px 0;
-    border-radius: 20px;
+    border-width: 5px 0 5px 0;
+    border-radius: 1.25rem;
 }
+
 /*  */
 .selected {
     text-align: center;
@@ -94,6 +107,15 @@ hr {
     flex-direction: column;
 }
 
+#user_image,
+#computer_image {
+    width: 10rem;
+}
+
+.choose_img {
+    width: 6.25rem;
+}
+
 #game_box {
     display: flex;
     justify-content: space-around;
@@ -101,27 +123,88 @@ hr {
 }
 
 #selection_box {
-    /* margin-top: 2rem; */
+    /* margin-top: 0.5rem; */
     display: flex;
     justify-content: center;
+    /* margin: 0 auto; */
+
 }
 
 .choose {
-    cursor: grabbing;
+    cursor: pointer;
     margin: 1rem;
     padding: 1rem;
-    background-color: rgb(244, 81, 0, 0.655);
-    border: 5px solid red;
+    background-color: rgba(176, 252, 12, 0.988);
+    border: 7px solid rgb(238, 108, 8);
     border-radius: 10px;
 }
 
-.choose:hover
-{
-    background-color: #464693;
-    border: 5px  dotted  aqua;
+.choose:hover {
+    background-color: #32328d;
+    border: 5px dotted aqua;
 }
 
 .score {
     /* background-color: #de7575; */
     padding: 1em;
+}
+
+
+/*   WRITING CSS FOR POPUP WINDOW   */
+
+
+.popup {
+    background-color: #f6f6f6;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    display: none;
+    text-align: center;
+    color: #553c9a;
+    /* font-weight:  */
+    /* min-height: 100vh; */
+}
+
+.popup button {
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff;
+    background: #03549a;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup h2 {
+    margin-top: -20px;
+}
+
+.popup p {
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+}
+
+a {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0a1b2e;
+    border-radius: 20px;
+    color: #cc0c0c;
+    text-decoration: none;
+    padding: 8px 0;
 }

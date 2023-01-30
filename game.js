@@ -1,5 +1,7 @@
 let userScore = 0;
 let computerScore = 0;
+userScore = Number(userScore);
+computerScore = Number(computerScore);
 
 var choices = [];
 start();
@@ -33,7 +35,7 @@ function play(selected) {
         document.getElementById(
             `computer_image`
         ).src = `images/${image_array[random_number]}.png`;
-        console.log("\n" + image_array[random_number]);
+        // console.log("\n" + image_array[random_number]);
         // ~~~~~~~~~~~~ function to set scores ~~~~~~~~~~~
         set_score(selected, image_array[random_number]);
 
@@ -50,12 +52,12 @@ function set_score(user, computer) {
                 status = "IT'S A DRAW😐";
                 break;
             case "choice2":
-                status = "YOU LOST😓";
+                status = "COMPUTER +1😓";
                 computerScore++;
                 fill_star("computer");
                 break;
             case "choice3":
-                status = '🎉YOU WON🎊';
+                status = '🎉USER +1🎊';
                 userScore++;
                 fill_star("user");
                 break;
@@ -65,7 +67,7 @@ function set_score(user, computer) {
     if (user === "choice2") {
         switch (computer) {
             case "choice1":
-                status = "🎊YOU WON🎉";
+                status = "🎊USER +1🎉";
                 userScore++;
                 fill_star("user");
                 break;
@@ -73,7 +75,7 @@ function set_score(user, computer) {
                 status = "IT'S A DRAW😐";
                 break;
             case "choice3":
-                status = 'YOU LOST😓';
+                status = 'COMPUTER+1😓';
                 computerScore++;
                 fill_star("computer");
                 break;
@@ -83,12 +85,12 @@ function set_score(user, computer) {
     if (user === "choice3") {
         switch (computer) {
             case "choice1":
-                status = "YOU LOST😓";
+                status = "COMPUTER+1😓";
                 computerScore++;
                 fill_star("computer");
                 break;
             case "choice2":
-                status = "🎉YOU WON🎊";
+                status = "🎉USER +1🎊";
                 userScore++;
                 fill_star("user");
                 break;
@@ -122,9 +124,51 @@ function show_msg(msg) {
 
 function checkwin() {
     // console.log(`\nuserscore=${userScore}\ncomputerscore=${computerScore}`);
-    if (userScore === '5' || computerScore === '5') {
-        // here i'll show popup to win 
-        window.open();
-        window.close();
+    if (userScore == '5' || computerScore == '5') {
+        // // here i'll show popup to win 
+        // window.open();
+        // window.close();
+        // display_win( (userScore === '5') ? 'user' : 'computer');
+        // console.log("ENTERED INTO THIS POPUP IF BLOCK");
+        if(userScore == '5')
+        {
+            document.getElementById("win_msg").textContent = `HURRAY YOU WON `;
+            document.getElementById("replay").classList.add("btn-success", "btn-lg");
+        }
+        else
+        {
+            document.getElementById("win_msg").textContent = `ALAS YOU LOST`;
+            document.getElementById("replay").classList.add("btn-danger", "btn-lg");
+        }
+        setTimeout( ()=>
+        {
+            document.querySelector(".popup").style.display = "block";
+            document.querySelector("main").style.opacity = '0.1';
+
+            document.querySelector("#close").addEventListener("click", function(){
+                document.querySelector(".popup").style.display = "none";
+                document.querySelector("main").style.opacity = '1';
+            });
+            document.querySelector("#close").addEventListener("touchstart", function(){
+                document.querySelector(".popup").style.display = "none";
+                document.querySelector("main").style.opacity = '1';
+            
+            });
+           
+        },200)
+
+        // removing events from choosings
+        for (let i = 0; i < 3; i++) {
+            choices[i] = document.getElementById(`choice${(i + 1)}`);
+            // var rec = choices[i].id;
+            // console.log();
+            choices[i].onclick = () => {
+                alert('RELOAD TO START NEW GAME')
+            } ;
+            choices[i].ontouchstart =  () => {
+                alert('RELOAD TO START NEW GAME')
+            } ;
+        }
     }
 }
+

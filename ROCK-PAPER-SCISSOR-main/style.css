@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #3b3b7b */
+}
+
+.fa {
+    font-size: 2.5em;
+}
+
+.scored {
+    color: orange;
+    font-size: 3rem;
+    fill: red;
+}
+
+#msg_button:hover {
+    cursor: default;
+}
+
+/* styling the header */
+@import url("https://fonts.googleapis.com/css2?family=Asap&family=Roboto:ital,wght@0,500;0,900;1,500&display=swap");
+
+body {
+    overflow: visible;
+    font-family: "Asap", sans-serif;
+    /*  animation-name: background-change;
+    animation-duration: 7s;
+    animation-iteration-count: infinite; */
+}
+
+/* @keyframes background-change {
+    0% {
+        background-color: #cecac3;
+    }
+
+    50% {
+        background-color: #d3aaaa;
+        /* coral pink */
+/*   }
+
+    100% {
+        background-color: #cecac3;
+        /* pale blue */
+
+/* below code is for dynamic background*/
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+header h1 {
+    /* position: absolute; */
+    /* overflow: hidden; */
+    width: 90%;
+    font-size: 4rem;
+    font-weight: 600;
+    color: transparent;
+    background-image: linear-gradient(to right, #35285e, #3b4663, #305253, #4d2a1f, #36285c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200%;
+    background-position: -200%;
+    animation: animated-gradient 6s infinite alternate-reverse;
+    /* animation:animated-gradient 9s infinite backwards; */
+}
+
+@keyframes animated-gradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+@media (max-width:800px) {
+    header h1 {
+        font-size: 8vw;
+    }
+}
+
+.complete {
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    max-height: 850px;
+
+    margin: 0 auto;
+    background-color: #f0e8d9;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 7.5s ease infinite;
+    border: none;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.to_nake_it_in_side {
+    display: flex;
+    flex-direction: column;
+}
+
+#result_msg {
+    width: 200px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* styling the hr tags */
+hr {
+    border-left: 10px double #000000;
+    border-top: 10px double #000000;
+    border-bottom: 10px double #000000;
+}
+
+.horizontal {
+    overflow: visible;
+    /* For IE */
+    height: 1.875rem;
+    /* font-weight: 10000; */
+    border-style: solid;
+    border-color: rgb(235, 10, 10);
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+.horizontal:before {
+    /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 1.875rem;
+    /* margin-top: -1.9375rem; */
+    border-style: solid;
+    border-color: black;
+    border-width: 5px 0 5px 0;
+    border-radius: 1.25rem;
+}
+
+/*  */
+.selected {
+    text-align: center;
+    padding: 2em;
+
+}
+
+#user,
+#computer {
+    display: flex;
+    flex-direction: column;
+}
+
+#user_image,
+#computer_image {
+    width: 10rem;
+}
+
+.choose_img {
+    width: 6.25rem;
+}
+
+#game_box {
+    display: flex;
+    justify-content: space-around;
+    ;
+
+}
+
+@media (max-width:514px) {
+    #game_box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    hr {
+        display: none;
+    }
+
+    #selection_box {
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+    }
+
+    .complete {
+        display: flex;
+        ;
+        flex-direction: row;
+        justify-content: space-between;
+        min-height: 640px;
+    }
+
+    .to_nake_it_in_side {
+        margin-top: 18vmin;
+    }
+
+}
+
+@media (max-width:476px)
+
+/* and (min-width:) */
+    {
+    .complete {
+        height: 190vmin
+    }
+
+    .choose {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .choose_img {
+        height: 20vmin;
+    }
+
+    /*   .score{
+            height: 25vmin; */
+    #computer_image,
+    #user_image {
+        width: 20vmin;
+        /* position: relative;
+            top:30%;
+            left: 10%;; */
+
+    }
+
+    .fa {
+        font-size: 8vmin;
+    }
+
+    h3 {
+        font-size: 8vmin;
+    }
+
+    hr {
+        border: 0rem;
+    }
+
+}
+
+/*below code for variavale heights*/
+
+
+@media (min-width:340px) and (max-height:750px) {
+    header h1{
+        font-size: 8vmin;
+    }
+    .complete {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #game_box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    hr {
+        height: 0px;
+        display: none;
+    }
+
+    #computer,
+    #user {
+        display: flex;
+        height: 40vh;
+
+    }
+
+    #selection_box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choose_img {
+        height: 10vh;
+    }
+
+    #user_image,
+    #computer_image {
+        height: calc(15vh+100px);
+        width: 15vh;
+
+    }
+
+    h3 {
+        font-size: 8vmin;
+        margin: 0;
+    }
+
+    .fa {
+        font-size: calc(1rem+1vh);
+    }
+
+    .to_nake_it_in_side {
+        margin-top: 10px;
+    }
+
+    .score {
+        padding: 0px;
+
+    }
+
+    .selected {
+        padding: 0px;
+    }
+}
+@media (max-width:339px){
+    .complete{
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+h3 {
+    color: #1e0ad6;
+}
+#selection_box {
+    /* margin-top: 0.5rem; */
+    display: flex;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+@media (max-width:514px) {
+    #selection_box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.choose {
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: rgba(176, 252, 12, 0.988);
+    border: 7px solid rgb(238, 108, 8);
+    border-radius: 10px;
+
+}
+
+.choose:hover {
+    background-color: #32328d;
+    border: 5px dotted aqua;
+}
+
+
+.score {
+    /* background-color: #de7575; */
+    padding: 1em;
+}
+
+
+/*   WRITING CSS FOR POPUP WINDOW   */
+
+
+.popup {
+    background-color: #f6f6f6;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    display: none;
+    text-align: center;
+    color: #553c9a;
+    /* font-weight:  */
+    /* min-height: 100vh; */
+}
+
+.popup button {
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff;
+    background: #03549a;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup h2 {
+    margin-top: -20px;
+}
+
+.popup p {
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+}
+
+a {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0a1b2e;
+    border-radius: 20px;
+    color: #cc0c0c;
+    text-decoration: none;
+    padding: 8px 0;
+}
